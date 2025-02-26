@@ -81,6 +81,7 @@ li {
     background: rgba(122, 213, 122, 0.147);
     transition: 0.2s ease;
     color: rgba(36, 36, 36, 0.834);
+    position: relative;
 }
 
 #submit:hover {
@@ -141,9 +142,10 @@ li {
     text-align: center;
 }
 
-#edit {
-    color: rgba(0, 0, 0, 0.301);
-    font-size: 0.8em;
+#alert-message {
+    color: rgba(255, 0, 0, 0.721);
+    border-radius: 5px;
+    text-align: left;
 }
 
 /* liste de tache terminée */
@@ -176,16 +178,13 @@ li {
 
 .hidden {
     display: none;
+    visibility: hidden;
 }
 
 @media (max-width:768px) {
 
     #todoListContainer {
         width: 60%;
-    }
-    #edit {
-        left: 415px;
-
     }
 }
 
