@@ -28,7 +28,8 @@ li {
     display: flex;
 }
 
-.pointer { /* pas visible dans le html car ajouté en js*/
+.pointer {
+    /* pas visible dans le html car ajouté en js*/
     height: 14px;
     padding-right: 20px;
 }
@@ -101,7 +102,9 @@ li {
 #taskList li {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    position: relative;
+
 }
 
 #taskList li:hover {
@@ -112,25 +115,37 @@ li {
 
 #taskList li i {
     visibility: hidden;
-    margin-left: auto;
-    cursor: pointer;
-    color: rgba(255, 0, 0, 0.704);
+
+
 }
 
 #taskList li:hover i {
-    margin-left: auto;
     cursor: pointer;
-    color: rgba(255, 0, 0, 0.53);
-    margin-top: 4px;
     visibility: visible;
-    transition: 0.2s ease;
+}
+
+#taskList li:hover #delete {
+    color: rgba(255, 0, 0, 0.6);
 }
 
 #taskList i:hover {
     transform: scale(1.2);
     transition: 0.2s ease;
-
+    cursor: pointer;
 }
+
+.i_container {
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    text-align: center;
+}
+
+#edit {
+    color: rgba(0, 0, 0, 0.301);
+    font-size: 0.8em;
+}
+
 /* liste de tache terminée */
 
 #deleteNav {
@@ -153,6 +168,7 @@ li {
     border-radius: 5px;
     transition: 0.2s ease;
 }
+
 #taskOver li:hover {
     background: rgba(255, 0, 0, 0.319);
     transition: 0.2s ease;
@@ -166,6 +182,10 @@ li {
 
     #todoListContainer {
         width: 60%;
+    }
+    #edit {
+        left: 415px;
+
     }
 }
 

@@ -1,10 +1,3 @@
-// Ajout d'une tache quand bouton formulaire cliqué
-
-// Quand on reclique sur la tache elle passe en bas de la liste avec un effet barré sur le teste
-
-// Lorsque l'on clic sur la croix à coté elle est supprimée que ce soit dans une list ou l'autre
-
-//// Ajouter une tache
 let task = document.querySelector('#task')
 let submit = document.querySelector('#submit')
 let taskList = document.querySelector('#taskList')
@@ -12,18 +5,22 @@ let taskOver = document.querySelector('#taskOver')
 let deleteNav = document.querySelector('#deleteNav')
 let intro = document.querySelector("#intro")
 
+
 submit.addEventListener('click', function () {
     event.preventDefault();
     intro.classList.remove('hidden')
     let taskText = task.value
     if (taskText != '') {
         let li = document.createElement('li');
-        li.innerHTML += `<img src="./asset/style/Image/point.png" alt="" class="pointer">${taskText}<i class="fas fa-times"></i>`;
+        li.innerHTML += `<div> 
+        <img src="./asset/style/Image/point.png" alt="" class="pointer">
+        ${taskText}</div><i class="fas fa-times" id="delete"></i>`;
         taskList.appendChild(li)
         deleteLi(li);
         done(li)
         task.value = ''
-    }
+    };
+
 
     function deleteLi(li) {
         let deleteTask = li.querySelector('.fa-times')
@@ -53,8 +50,8 @@ function done(li) {
     });
 }
 
-function clearing() {
-    if (taskOver.querySelectorAll("li").length === 0) {
+function clearing(li) {
+    if (taskOver.querySelectorAll(li).length === 0) {
         deleteNav.style.display = "none"
     }
 }
